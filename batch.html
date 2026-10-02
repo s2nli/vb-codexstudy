@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="referrer" content="no-referrer">
+<meta name="theme-color" content="#090b10">
+<title>Batch — Vibrante / CODEX STUDYS</title>
+<link rel="icon" href="assets/vibrante-icon-192.png">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="assets/vibrante-icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script>(function(){var t=localStorage.getItem("codex-studys-theme");if(t&&t!=="system")document.documentElement.setAttribute("data-theme",t);})();</script>
+<style>
+    :root {
+      --bg: #080a0f;
+      --bg-raised: #0d1017;
+      --panel: rgba(17, 21, 31, .82);
+      --panel-solid: #11151f;
+      --panel-soft: #151b27;
+      --line: rgba(255, 255, 255, .09);
+      --line-strong: rgba(255, 255, 255, .16);
+      --text: #f4f6fb;
+      --muted: #8d96a8;
+      --muted-bright: #b4bdcd;
+      --brand: #8b7cff;
+      --brand-bright: #a69cff;
+      --mint: #55ddbb;
+      --orange: #ffb36b;
+      --danger: #ff7585;
+      --shadow: 0 24px 70px rgba(0, 0, 0, .32);
+      --radius-lg: 24px;
+      --radius-md: 16px;
+      --radius-sm: 11px;
+      --max: 1240px;
+    }
+
+    html[data-theme="light"] {
+      --bg: #f4f5f9; --bg-raised: #ffffff; --panel: rgba(255,255,255,.86); --panel-solid: #ffffff; --panel-soft: #eef0f6;
+      --line: rgba(20,22,35,.1); --line-strong: rgba(20,22,35,.18); --text: #14161f; --muted: #5b6072; --muted-bright: #383c4a;
+      --brand: #6c5ce7; --brand-bright: #5b46e0; --mint: #12b899; --orange: #d9832a; --danger: #e0344f;
+      --shadow: 0 24px 70px rgba(30,30,60,.14);
+    }
+    html[data-theme="sandalwood"] {
+      --bg: #1c130c; --bg-raised: #241a10; --panel: rgba(43,31,20,.82); --panel-solid: #2b1f14; --panel-soft: #332417;
+      --line: rgba(255,225,190,.1); --line-strong: rgba(255,225,190,.18); --text: #f6ead9; --muted: #b89a7c; --muted-bright: #d9c1a3;
+      --brand: #cd8a4a; --brand-bright: #e6a75f; --mint: #b58a4f; --orange: #ff9d4d; --danger: #ff7c6b;
+    }
+    html[data-theme="forest-emerald"] {
+      --bg: #06140f; --bg-raised: #0a1c15; --panel: rgba(12,32,24,.82); --panel-solid: #0e2318; --panel-soft: #122a1d;
+      --line: rgba(180,255,220,.09); --line-strong: rgba(180,255,220,.17); --text: #eafff3; --muted: #83b39c; --muted-bright: #aed7c1;
+      --brand: #2fbf7a; --brand-bright: #3fdd91; --mint: #55ddbb; --orange: #ffb36b; --danger: #ff7585;
+    }
+    html[data-theme="ocean-deep"] {
+      --bg: #050e17; --bg-raised: #081521; --panel: rgba(11,26,40,.82); --panel-solid: #0c1e2e; --panel-soft: #102636;
+      --line: rgba(170,225,255,.09); --line-strong: rgba(170,225,255,.17); --text: #eaf6ff; --muted: #7ea3bd; --muted-bright: #a9cbe0;
+      --brand: #2196e0; --brand-bright: #4db4ff; --mint: #2fd3c7; --orange: #ffb36b; --danger: #ff7585;
+    }
+    html[data-theme="sakura-blossom"] {
+      --bg: #fff3f6; --bg-raised: #ffffff; --panel: rgba(255,255,255,.88); --panel-solid: #ffffff; --panel-soft: #ffe4ec;
+      --line: rgba(180,40,80,.1); --line-strong: rgba(180,40,80,.18); --text: #3c1420; --muted: #a26478; --muted-bright: #7a3a4c;
+      --brand: #ec6f96; --brand-bright: #e14f7e; --mint: #16b39a; --orange: #e08a3c; --danger: #d9314f;
+    }
+    html[data-theme="dracula-midnight"] {
+      --bg: #14121f; --bg-raised: #1b1830; --panel: rgba(38,33,64,.82); --panel-solid: #241f3d; --panel-soft: #2b2549;
+      --line: rgba(220,200,255,.09); --line-strong: rgba(220,200,255,.17); --text: #f3ecff; --muted: #a08fc9; --muted-bright: #c6b7ea;
+      --brand: #bd93f9; --brand-bright: #d6acff; --mint: #50fa7b; --orange: #ffb86c; --danger: #ff5555;
+    }
+    html[data-theme="lavender-mist"] {
+      --bg: #f5f2fc; --bg-raised: #ffffff; --panel: rgba(255,255,255,.88); --panel-solid: #ffffff; --panel-soft: #ece5fb;
+      --line: rgba(80,50,140,.1); --line-strong: rgba(80,50,140,.18); --text: #2c2140; --muted: #7a6a9c; --muted-bright: #4d3d70;
+      --brand: #9b7be0; --brand-bright: #855fdb; --mint: #16b39a; --orange: #d9832a; --danger: #d9314f;
+    }
+    html[data-theme="cyberpunk-neon"] {
+      --bg: #05020a; --bg-raised: #0a0512; --panel: rgba(20,8,32,.85); --panel-solid: #150a22; --panel-soft: #1c0e2c;
+      --line: rgba(255,60,220,.16); --line-strong: rgba(255,60,220,.3); --text: #f2e9ff; --muted: #b48ad9; --muted-bright: #e2b8ff;
+      --brand: #ff2ec4; --brand-bright: #ff5be0; --mint: #2af5ff; --orange: #ffb36b; --danger: #ff3860;
+    }
+* { box-sizing: border-box; }
+body { margin:0; min-width:320px; background: radial-gradient(circle at 78% 3%, rgba(139,124,255,.12), transparent 30rem), var(--bg); color:var(--text); font:15px/1.55 "DM Sans", sans-serif; -webkit-font-smoothing:antialiased; }
+h1,h2,h3 { font-family:"Space Grotesk","DM Sans",sans-serif; margin:0; }
+button { font:inherit; color:inherit; cursor:pointer; }
+.topbar { position:sticky; top:0; z-index:20; display:flex; align-items:center; gap:12px; padding:12px 16px; background:var(--panel); backdrop-filter:blur(16px); border-bottom:1px solid var(--line); }
+.icon-btn { width:38px; height:38px; display:grid; place-items:center; border-radius:12px; border:1px solid var(--line); background:var(--panel-soft); }
+.icon-btn svg { width:18px; height:18px; }
+.topbar h2 { font-size:15px; font-weight:600; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.wrap { max-width:860px; margin:0 auto; padding:16px; }
+.hero { border:1px solid var(--line); border-radius:var(--radius-lg); overflow:hidden; background:var(--panel); box-shadow:var(--shadow); }
+.hero img { width:100%; aspect-ratio:16/9; object-fit:cover; display:block; background:var(--panel-soft); }
+.hero-body { padding:16px; }
+.hero-body h1 { font-size:20px; line-height:1.3; }
+.hero-body p { margin:6px 0 0; color:var(--muted-bright); font-size:13px; }
+.chips { display:flex; flex-wrap:wrap; gap:6px; margin-top:12px; }
+.chip { padding:3px 10px; border-radius:999px; border:1px solid var(--line); color:var(--muted-bright); background:rgba(255,255,255,.03); font-size:11px; font-weight:700; }
+.chip-accent { color:var(--brand-bright); border-color:rgba(139,124,255,.35); background:rgba(139,124,255,.1); }
+.chip-live { color:var(--danger); border-color:rgba(255,117,133,.4); background:rgba(255,117,133,.1); }
+.tabs { display:flex; gap:8px; margin:16px 0 12px; }
+.tab { flex:1; padding:10px 12px; border-radius:var(--radius-sm); border:1px solid var(--line); background:var(--panel); color:var(--muted-bright); font-weight:700; font-size:13px; }
+.tab.active { color:#fff; border-color:transparent; background:linear-gradient(135deg,#9487ff,#6c5bed); box-shadow:0 10px 24px rgba(109,91,237,.24); }
+.panel { display:none; } .panel.active { display:block; }
+.row { display:flex; align-items:center; gap:12px; padding:14px; margin-bottom:10px; border:1px solid var(--line); border-radius:var(--radius-md); background:var(--panel); cursor:pointer; transition:transform .2s, border-color .2s; }
+.row:hover { transform:translateY(-2px); border-color:rgba(166,156,255,.42); }
+.row-ico { width:38px; height:38px; flex:none; display:grid; place-items:center; border-radius:11px; background:rgba(139,124,255,.12); color:var(--brand-bright); }
+.row-ico svg { width:18px; height:18px; }
+.row-info { flex:1; min-width:0; }
+.row-title { font-weight:700; font-size:14px; line-height:1.35; }
+.row-sub { color:var(--muted); font-size:12px; margin-top:2px; }
+.row-arrow { color:var(--muted); }
+.btn { display:inline-flex; align-items:center; justify-content:center; gap:6px; padding:9px 14px; border-radius:12px; border:1px solid transparent; font-weight:700; font-size:13px; color:#fff; background:linear-gradient(135deg,#9487ff,#6c5bed); }
+.btn-ghost { color:var(--text); background:var(--panel-soft); border-color:var(--line); }
+.btn[disabled] { opacity:.5; cursor:not-allowed; }
+.back-row { margin-bottom:12px; }
+.sec-title { font-weight:700; font-size:15px; margin:0 0 12px; }
+.class-card { border:1px solid var(--line); border-radius:var(--radius-md); background:var(--panel); margin-bottom:10px; padding:14px; }
+.class-actions { display:flex; flex-wrap:wrap; gap:8px; margin-top:12px; }
+.empty, .error { text-align:center; padding:36px 16px; color:var(--muted); }
+.loader { width:30px; height:30px; margin:36px auto; border-radius:50%; border:3px solid var(--line-strong); border-top-color:var(--brand-bright); animation:spin .8s linear infinite; }
+@keyframes spin { to { transform:rotate(360deg); } }
+.about ul { margin:0 0 16px; padding-left:20px; color:var(--muted-bright); font-size:14px; }
+.about li { margin-bottom:6px; }
+.crumbs { display:flex; flex-wrap:wrap; align-items:center; gap:6px; margin:16px 0 10px; font-size:13px; }
+.crumb { padding:5px 10px; border-radius:999px; border:1px solid var(--line); background:var(--panel); color:var(--muted-bright); font-weight:600; max-width:100%; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.crumb.current { color:var(--brand-bright); border-color:rgba(139,124,255,.35); background:rgba(139,124,255,.1); cursor:default; }
+.crumb-sep { color:var(--muted); }
+.search { width:100%; margin:0 0 12px; padding:11px 14px; border-radius:var(--radius-sm); border:1px solid var(--line); background:var(--panel); color:var(--text); font:inherit; outline:none; }
+.search:focus { border-color:rgba(166,156,255,.5); }
+.row-ico.pdf { background:rgba(255,179,107,.14); color:var(--orange); }
+.row-ico.vid { background:rgba(85,221,187,.13); color:var(--mint); }
+.row-ico.fold { background:rgba(139,124,255,.12); color:var(--brand-bright); }
+.error small { display:block; margin-top:6px; word-break:break-word; }
+</style>
+</head>
+<body>
+<header class="topbar">
+  <a class="icon-btn" href="index.html" aria-label="Back to batches"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m15 18-6-6 6-6"/></svg></a>
+  <h2 id="topTitle">Loading…</h2>
+</header>
+<main class="wrap">
+  <section class="hero" id="hero"><div class="loader"></div></section>
+  <nav class="crumbs" id="crumbs" aria-label="Folder path"></nav>
+  <input class="search" id="search" type="search" placeholder="Search in this folder…" style="display:none">
+  <section id="content"></section>
+</main>
+
+<script>
+/* ---------- Vibrante API ---------- */
+const VIB_API = "https://Api.bidweb.lol/vib/get/folder_contentsv3";
+const VIB_HEADERS = {
+  "auth-key": "appxapi",
+  "client-service": "Appx",
+  "source": "website"
+};
+
+const $ = (s) => document.querySelector(s);
+const esc = (v = "") => String(v).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#039;" }[c]));
+const ICON = {
+  folder: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>',
+  video: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>',
+  pdf: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>',
+  link: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>'
+};
+const ARROW = '<svg class="row-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><polyline points="9 18 15 12 9 6"/></svg>';
+
+const FALLBACK_BATCHES = [
+  { id: 8,  name: "NEET ULTIMATE CRASH COURSE (HINDI)", class: "12th / Dropper", image: "https://vibrante.primestudy.live/image/8.png",  price: "Free", folder_id: 8 },
+  { id: 10, name: "JEE MAIN + ADVANCED CRASH COURSE",   class: "11th / 12th",    image: "https://vibrante.primestudy.live/image/10.png", price: "Free", folder_id: 10 },
+  { id: 35, name: "NEET 2026 TARGET BATCH",             class: "11th",           image: "https://vibrante.primestudy.live/image/35.png", price: "Free", folder_id: 35 },
+  { id: 36, name: "JEE 2026 TARGET BATCH",              class: "11th",           image: "https://vibrante.primestudy.live/image/36.png", price: "Free", folder_id: 36 },
+  { id: 7,  name: "FOUNDATION BATCH (CLASS 9 & 10)",    class: "Foundation",     image: "https://vibrante.primestudy.live/image/7.png",  price: "Free", folder_id: 7 }
+];
+
+const params = new URLSearchParams(location.search);
+const batchId = params.get("id");
+const batchName = params.get("name") || "";
+let batchMeta = null;
+let currentFolderId = null;
+let trail = [];            // [{id, title}] — folders opened below the batch root
+let items = [];            // normalized items of the folder on screen
+const folderCache = new Map();
+
+/* ---------- API + parser ---------- */
+async function fetchFolder(folderId) {
+  if (folderCache.has(String(folderId))) return folderCache.get(String(folderId));
+  const res = await fetch(`https://Api.bidweb.lol/vib/get/folder_contentsv3?folder_id=${encodeURIComponent(folderId)}`, { headers: VIB_HEADERS });
+  if (!res.ok) throw new Error("Request failed (" + res.status + ")");
+  const json = await res.json();
+  if (json && (json.status === false || json.success === false || json.status === "error")) {
+    throw new Error(json.message || json.msg || "Request failed");
+  }
+  const list = parseItems(json);
+  folderCache.set(String(folderId), list);
+  return list;
+}
+
+function pickLinks(it) {
+  const v = it.video_link || it.videoLink || it.video_url || it.videoUrl || it.hls_url || it.hls || it.stream_url || it.mp4_url || it.youtube_link || "";
+  const p = it.pdf_link || it.pdfLink || it.pdf_url || it.pdfUrl || it.pdf || it.notes_url || "";
+  const g = it.url || it.link || it.file_url || it.fileUrl || it.download_link || it.downloadLink || it.file || "";
+  return { v: typeof v === "string" ? v : "", p: typeof p === "string" ? p : "", g: typeof g === "string" ? g : "" };
+}
+
+function normalizeItem(it, hint) {
+  if (!it || typeof it !== "object") return null;
+  const title = it.title || it.Title || it.name || it.folder_name || it.video_title || it.pdf_title || it.topic || "Untitled";
+  const id = it.id ?? it.folder_id ?? it.folderId ?? it._id ?? null;
+  const type = String(it.material_type || it.materialType || it.type || it.content_type || it.contentType || hint || "").toUpperCase();
+  const { v, p, g } = pickLinks(it);
+  const anyLink = v || p || g;
+  const isFolderFlag = it.is_folder === 1 || it.is_folder === true || it.isFolder === true || /FOLDER|CHAPTER|SUBJECT|TOPIC|MODULE/.test(type);
+  let kind;
+  if (isFolderFlag) kind = "folder";
+  else if (/PDF|NOTE|DOC|DPP/.test(type) || p || /\.pdf(\?|$)/i.test(g)) kind = "pdf";
+  else if (/VIDEO|LECTURE|CLASS|LIVE/.test(type) || v) kind = "video";
+  else if (anyLink) kind = "link";
+  else if (id != null) kind = "folder";   // no link but has an id -> treat as a sub-folder
+  else return null;
+  const url = kind === "pdf" ? (p || g) : kind === "video" ? (v || g) : kind === "link" ? anyLink : "";
+  const sub = [it.teacher_name || it.teacherName || it.teacher, it.date || it.created_at || it.publish_time || ""].filter(Boolean).join(" · ");
+  const count = it.total_items ?? it.item_count ?? it.count ?? it.totalcontent ?? null;
+  return { kind, id, title: String(title), url, sub, count };
+}
+
+function parseItems(json) {
+  const root = json && (json.data !== undefined ? json.data : json);
+  const out = [];
+  const take = (arr, hint) => (arr || []).forEach((x) => { const n = normalizeItem(x, hint); if (n) out.push(n); });
+  if (Array.isArray(root)) { take(root); return out; }
+  if (root && typeof root === "object") {
+    const keys = ["list", "items", "contents", "content", "materials", "folder_contents", "folders", "videos", "pdfs", "files", "data"];
+    const hints = { folders: "FOLDER", videos: "VIDEO", pdfs: "PDF" };
+    let found = false;
+    keys.forEach((k) => { if (Array.isArray(root[k])) { found = true; take(root[k], hints[k]); } });
+    if (!found) Object.keys(root).forEach((k) => { if (Array.isArray(root[k])) take(root[k]); });
+  }
+  return out;
+}
+
+/* ---------- UI ---------- */
+async function init() {
+  if (!batchId) { $("#hero").innerHTML = '<div class="error">Batch not found.</div>'; return; }
+  let list = FALLBACK_BATCHES;
+  try {
+    const r = await fetch("batches.json", { cache: "no-store" });
+    if (r.ok) { const j = await r.json(); const arr = Array.isArray(j) ? j : j.batches; if (Array.isArray(arr) && arr.length) list = arr; }
+  } catch (e) {}
+  batchMeta = list.find((b) => String(b.id) === String(batchId)) || FALLBACK_BATCHES.find((b) => String(b.id) === String(batchId)) || { id: batchId, name: batchName || "Batch", folder_id: batchId };
+  const name = batchName || batchMeta.name || "Batch";
+  currentFolderId = batchMeta.folder_id != null ? batchMeta.folder_id : batchMeta.id;
+  document.title = name + " — Vibrante / CODEX STUDYS";
+  $("#topTitle").textContent = name;
+  $("#hero").innerHTML = `
+    ${batchMeta.image ? `<img src="${esc(batchMeta.image)}" alt="" referrerpolicy="no-referrer" onerror="this.src='assets/codex-telegram.png'">` : ""}
+    <div class="hero-body">
+      <h1>${esc(name)}</h1>
+      <p>Vibrante / CODEX STUDYS</p>
+      <div class="chips">
+        ${batchMeta.class ? `<span class="chip chip-accent">${esc(batchMeta.class)}</span>` : ""}
+        <span class="chip">${esc(batchMeta.price || "Free")}</span>
+      </div>
+    </div>`;
+  trail = [];
+  loadFolder(currentFolderId);
+}
+
+async function loadFolder(folderId) {
+  currentFolderId = folderId;
+  const el = $("#content");
+  $("#search").value = ""; $("#search").style.display = "none";
+  renderCrumbs();
+  el.innerHTML = '<div class="loader"></div>';
+  try {
+    items = await fetchFolder(folderId);
+    $("#search").style.display = items.length > 6 ? "block" : "none";
+    renderItems(items);
+  } catch (e) {
+    el.innerHTML = `<div class="error">Could not load this folder.<small>${esc(e.message)}</small><div style="margin-top:12px"><button class="btn btn-ghost" id="retry">Retry</button></div></div>`;
+    $("#retry").addEventListener("click", () => loadFolder(folderId));
+  }
+}
+
+function renderCrumbs() {
+  const rootName = batchName || (batchMeta && batchMeta.name) || "Batch";
+  const parts = [{ id: batchMeta ? (batchMeta.folder_id != null ? batchMeta.folder_id : batchMeta.id) : batchId, title: rootName, depth: -1 }]
+    .concat(trail.map((t, i) => ({ ...t, depth: i })));
+  $("#crumbs").innerHTML = parts.map((p, i) => {
+    const last = i === parts.length - 1;
+    return (i ? '<span class="crumb-sep">›</span>' : "") +
+      `<button class="crumb${last ? " current" : ""}" data-depth="${p.depth}" ${last ? "disabled" : ""}>${i === 0 ? "🏠 " : ""}${esc(p.title)}</button>`;
+  }).join("");
+  $("#crumbs").querySelectorAll(".crumb:not(.current)").forEach((b) => b.addEventListener("click", () => {
+    const d = Number(b.dataset.depth);
+    trail = trail.slice(0, d + 1);
+    const target = d < 0 ? (batchMeta.folder_id != null ? batchMeta.folder_id : batchMeta.id) : trail[d].id;
+    loadFolder(target);
+  }));
+}
+
+function renderItems(list) {
+  const el = $("#content");
+  if (!list.length) { el.innerHTML = '<div class="empty">Nothing here yet. Please check back later.</div>'; return; }
+  const order = { folder: 0, video: 1, pdf: 2, link: 3 };
+  const sorted = [...list].sort((a, b) => order[a.kind] - order[b.kind]);
+  el.innerHTML = sorted.map((it) => {
+    const idx = items.indexOf(it);
+    if (it.kind === "folder") {
+      return `<div class="row" data-folder="${idx}"><div class="row-ico fold">${ICON.folder}</div>
+        <div class="row-info"><div class="row-title">${esc(it.title)}</div>${it.count != null ? `<div class="row-sub">${esc(it.count)} items</div>` : ""}</div>${ARROW}</div>`;
+    }
+    const ico = it.kind === "video" ? ICON.video : it.kind === "pdf" ? ICON.pdf : ICON.link;
+    const cls = it.kind === "video" ? "vid" : it.kind === "pdf" ? "pdf" : "fold";
+    const label = it.kind === "video" ? "▶ Watch" : it.kind === "pdf" ? "View PDF" : "Open";
+    return `<div class="class-card"><div style="display:flex;gap:12px;align-items:flex-start">
+        <div class="row-ico ${cls}">${ico}</div>
+        <div class="row-info"><div class="row-title">${esc(it.title)}</div>${it.sub ? `<div class="row-sub">${esc(it.sub)}</div>` : ""}</div></div>
+      <div class="class-actions">
+        ${it.url ? `<button class="btn" data-open="${esc(it.url)}">${label}</button>` : '<button class="btn" disabled>Coming soon</button>'}
+        ${it.kind === "pdf" && it.url ? `<button class="btn btn-ghost" data-dl="${esc(it.url)}" data-name="${esc(it.title)}">⬇ Download</button>` : ""}
+      </div></div>`;
+  }).join("");
+  el.querySelectorAll("[data-folder]").forEach((r) => r.addEventListener("click", () => {
+    const it = items[Number(r.dataset.folder)];
+    trail.push({ id: it.id, title: it.title });
+    loadFolder(it.id);
+    window.scrollTo({ top: 0 });
+  }));
+}
+
+$("#search").addEventListener("input", (e) => {
+  const q = e.target.value.trim().toLowerCase();
+  renderItems(q ? items.filter((i) => i.title.toLowerCase().includes(q)) : items);
+});
+
+/* ---------- Open / download ---------- */
+function openLink(url) { if (url) window.open(url, "_blank", "noopener,noreferrer"); }
+
+async function downloadFile(url, name) {
+  const safe = (String(name || "notes").replace(/[\\/:*?"<>|]+/g, " ").trim() || "notes") + ".pdf";
+  try {
+    const res = await fetch(url, { referrerPolicy: "no-referrer" });
+    if (!res.ok) throw new Error("bad response");
+    const blob = await res.blob();
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(blob); a.download = safe;
+    document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(() => URL.revokeObjectURL(a.href), 4000);
+  } catch (e) {
+    // host blocks direct download -> open the file so it can be saved from the viewer
+    const a = document.createElement("a");
+    a.href = url; a.target = "_blank"; a.rel = "noopener noreferrer"; a.download = safe;
+    document.body.appendChild(a); a.click(); a.remove();
+  }
+}
+
+document.addEventListener("click", (e) => {
+  const o = e.target.closest("[data-open]"); if (o) { openLink(o.dataset.open); return; }
+  const d = e.target.closest("[data-dl]"); if (d) { downloadFile(d.dataset.dl, d.dataset.name); }
+});
+
+init();
+</script>
+</body>
+</html>

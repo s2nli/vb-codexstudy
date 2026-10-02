@@ -1,0 +1,42 @@
+[
+  {
+    "id": 8,
+    "name": "NEET ULTIMATE CRASH COURSE (HINDI)",
+    "class": "12th / Dropper",
+    "image": "https://vibrante.primestudy.live/image/8.png",
+    "price": "Free",
+    "folder_id": 8
+  },
+  {
+    "id": 10,
+    "name": "JEE MAIN + ADVANCED CRASH COURSE",
+    "class": "11th / 12th",
+    "image": "https://vibrante.primestudy.live/image/10.png",
+    "price": "Free",
+    "folder_id": 10
+  },
+  {
+    "id": 35,
+    "name": "NEET 2026 TARGET BATCH",
+    "class": "11th",
+    "image": "https://vibrante.primestudy.live/image/35.png",
+    "price": "Free",
+    "folder_id": 35
+  },
+  {
+    "id": 36,
+    "name": "JEE 2026 TARGET BATCH",
+    "class": "11th",
+    "image": "https://vibrante.primestudy.live/image/36.png",
+    "price": "Free",
+    "folder_id": 36
+  },
+  {
+    "id": 7,
+    "name": "FOUNDATION BATCH (CLASS 9 & 10)",
+    "class": "Foundation",
+    "image": "https://vibrante.primestudy.live/image/7.png",
+    "price": "Free",
+    "folder_id": 7
+  }
+]
