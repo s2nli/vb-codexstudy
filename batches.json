@@ -1,0 +1,27 @@
+{
+  "success": true,
+  "batches": [
+    {
+      "_id": "35",
+      "name": "Vibrant Academy Batch 1",
+      "byName": "Lectures & Notes — Vibrant Academy Kota",
+      "startDate": "2026-04-10",
+      "language": "Hinglish",
+      "previewImage": "assets/vibrant-logo.png",
+      "type": "RECORDED",
+      "slug": "vibrant-academy-batch-1",
+      "subBatches": []
+    },
+    {
+      "_id": "8",
+      "name": "Vibrant Academy Batch 2",
+      "byName": "Lectures & Notes — Vibrant Academy Kota",
+      "startDate": "2026-04-10",
+      "language": "Hinglish",
+      "previewImage": "assets/vibrant-logo.png",
+      "type": "RECORDED",
+      "slug": "vibrant-academy-batch-2",
+      "subBatches": []
+    }
+  ]
+}
